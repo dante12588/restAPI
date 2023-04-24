@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import path from 'path';
 
 import router from './router/index';
 
@@ -23,6 +24,12 @@ const server = http.createServer(app);
 server.listen(8080, () => {
     console.log("Server running on http://localhost:8080");
 })
+
+app.set('views', path.join(__dirname, '/views')); 
+
+app.set('view engine', 'pug');
+app.use(express.static( path.join(__dirname, 'public') ));
+
 
 const MONGO_URL = 'mongodb+srv://root:root@cluster0.ggephvj.mongodb.net/?retryWrites=true&w=majority';
 
