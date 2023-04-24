@@ -8,4 +8,6 @@ html(lang="pl")
 
         link(rel="stylesheet", href="css/main.css")
     body 
-    p asd
+    form(action="/sendForm" method="POST")
+        input(type="text" name="name")
+        button Wyślij
