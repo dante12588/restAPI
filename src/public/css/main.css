@@ -20,3 +20,7 @@ code, div.code p{
     padding: 0;
     text-align: center;
 }
+
+div.code p span{
+    color: rgb(211, 58, 58);
+}
