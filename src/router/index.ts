@@ -11,11 +11,6 @@ export default (): express.Router => {
     authentication(router);
     
     renderView(router);
-    
-
-    // router.get('/', (req, res) => {
-    //     res.render('home');
-    // })
 
     return router;
 }
