@@ -2,7 +2,7 @@
   "name": "restAPI",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,6 +26,7 @@
     "@types/express": "^4.17.17",
     "@types/express-serve-static-core": "^4.17.3",
     "@types/mongoose": "^5.11.97",
+    "dotenv": "^16.0.3",
     "mongose": "0.0.2-security",
     "nodemon": "^2.0.22",
     "pug": "^3.0.2",
