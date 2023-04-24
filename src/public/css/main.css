@@ -2,7 +2,7 @@ body{
     background-color: rgb(40, 40, 40);
 }
 
-body, a{
+body, a, label{
     color: azure;
     font-family: sans-serif;
 }
