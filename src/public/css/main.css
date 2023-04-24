@@ -6,3 +6,17 @@ body, a, label{
     color: azure;
     font-family: sans-serif;
 }
+
+div.code{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+code, div.code p{
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
