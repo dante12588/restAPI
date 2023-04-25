@@ -1,26 +1,21 @@
-body{
-    background-color: rgb(40, 40, 40);
-}
+body {
+  background-color: #212121; }
 
-body, a, label{
-    color: azure;
-    font-family: sans-serif;
-}
+body, a, label {
+  color: azure;
+  font-family: sans-serif; }
 
-div.code{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+div.code {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
-code, div.code p{
-    font-size: 80px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+code, div.code p {
+  font-size: 80px;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
 
-div.code p span{
-    color: rgb(211, 58, 58);
-}
+div.code p span {
+  color: #d33a3a; }
