@@ -1,26 +1,15 @@
-body{
-    background-color: rgb(33, 33, 33);
-}
+//======== import abstracts ==========//
 
-body, a, label{
-    color: azure;
-    font-family: sans-serif;
-}
+@import './abstracts/fonts.scss';
+@import './abstracts/mixins.scss';
+@import './abstracts/variables.scss';
 
-div.code{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+//======== import base ===============//
 
-code, div.code p{
-    font-size: 80px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+@import './base/reset';
+@import './base/typography';
 
-div.code p span{
-    color: rgb(211, 58, 58);
-}
+//======== import components =========//
+
+//======== import layouts ============//
+@import './layouts/404.scss';
