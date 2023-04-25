@@ -1,5 +1,4 @@
-// import dotenv from 'dotenv';
-// dotenv.config();
+import { MONGO_URL } from './config/config';
 
 import express from 'express';
 import http from 'http';
@@ -34,8 +33,7 @@ app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'pug');
 app.use(express.static( path.join(__dirname, 'public') ));
 
-
-const MONGO_URL = 'mongodb+srv://root:root@cluster0.ggephvj.mongodb.net/?retryWrites=true&w=majority';
+// const MONGO_URL = 'mongodb+srv://root:root@cluster0.ggephvj.mongodb.net/?retryWrites=true&w=majority'; 
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
