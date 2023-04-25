@@ -15,3 +15,11 @@ export const aboutUs = (req: express.Request, res: express.Response) => {
         res.send(404);
     }
 }
+
+export const adminPanel = (req: express.Request, res: express.Response) => {
+    try{
+        res.render('admin-panel/home');
+    }catch(error){
+        res.send(404);
+    }
+}
