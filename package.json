@@ -2,9 +2,13 @@
   "name": "restAPI",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "start": "nodemon",
+    "dev": "concurrently --kill-others \"npm start\" \"npm run browsersync\" \"npm run watch-css\"",
+    "build-css": "node-sass --include-path scss ./src/scss/main.scss ./src/public/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "browsersync": "browser-sync start --proxy localhost:8080 --files='./src'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +23,7 @@
   },
   "homepage": "https://github.com/dante12588/restAPI#readme",
   "devDependencies": {
+    "@babel/preset-typescript": "^7.21.4",
     "@types/body-parser": "^1.19.2",
     "@types/compression": "^1.7.2",
     "@types/cookie-parser": "^1.4.3",
@@ -26,18 +31,38 @@
     "@types/express": "^4.17.17",
     "@types/express-serve-static-core": "^4.17.3",
     "@types/mongoose": "^5.11.97",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.29.1",
+    "concurrently": "^8.0.1",
+    "del": "^7.0.0",
     "dotenv": "^16.0.3",
+    "gulp-clean": "^0.4.0",
+    "gulp-nodemon": "^2.5.0",
     "mongose": "0.0.2-security",
+    "node-sass": "^8.0.0",
     "nodemon": "^2.0.22",
     "pug": "^3.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@types/gulp": "^4.0.10",
+    "@types/gulp-babel": "^6.1.30",
     "body-parser": "^1.20.2",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "rimraf": "^5.0.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
