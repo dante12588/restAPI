@@ -8,10 +8,18 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import path from 'path';
-
 import router from './router/index';
+const session = require('express-session');
+
+const oneDay = 1000 * 60 * 60 * 24;
 
 const app = express();
+
+app.use(session({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized: false,
+    cookie: { maxAge: oneDay }
+}));
 
 app.use(cors({
     credentials: true,
@@ -39,8 +47,6 @@ mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
 // mongoose.connect(process.env.???);
 mongoose.connection.on('error', (error: Error) => console.log(error));
-
-
 
 app.use('/', router());
 

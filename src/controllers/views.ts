@@ -1,4 +1,5 @@
 import express from 'express';
+const session = require('express-session');
 
 export const home = (req: express.Request, res: express.Response) => {
     try{
@@ -18,7 +19,14 @@ export const aboutUs = (req: express.Request, res: express.Response) => {
 
 export const adminPanel = (req: express.Request, res: express.Response) => {
     try{
-        res.render('admin-panel/home');
+        const login = session.userName;
+
+        if(login){
+            res.render('admin-panel/home');
+        }else{
+            res.render('admin-panel/login');
+        }
+
     }catch(error){
         res.send(404);
     }
