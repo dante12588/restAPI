@@ -20,9 +20,10 @@ export const aboutUs = (req: express.Request, res: express.Response) => {
 export const adminPanel = (req: express.Request, res: express.Response) => {
     try{
         const login = session.userName;
+        const w = 'lubbię placki';
 
         if(login){
-            res.render('admin-panel/home');
+            res.render('admin-panel/home', { login, w });
         }else{
             res.render('admin-panel/login');
         }
